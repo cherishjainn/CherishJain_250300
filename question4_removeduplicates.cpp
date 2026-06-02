@@ -4,24 +4,12 @@ using namespace std;
  
  
  int removeDuplicates(vector<int>& nums) {
-        int n = nums.size();
-        int k = 0;
-        unordered_map<int,int> mpp;
-        for(int i = 0 ; i<n ; i++){
-            if(mpp.find(nums[i]) != mpp.end()) {
-                mpp[nums[i]]++;
-            }
-            else{
-                mpp[nums[i]]++;
+       int n = nums.size();
+       int k  =1;
+       for(int i = 1 ; i<n ; i++){
+             if(nums[i]!=nums[i-1]){
                 nums[k++] = nums[i];
-            }
-       }
-       int ind =k;
-       for(auto i:mpp){
-         while(i.second>1){
-            nums[ind++] = i.first;
-            i.second--; 
-        }
-       }
+             }
+       } 
        return k;
     }
