@@ -13,8 +13,4 @@ bool isPalindrome(int x) {
         return true;
     }
 
-int main(){
-    int x ;
-    cin>>x;
-   cout << isPalindrome(x);
-}    
+
