@@ -1,33 +1,40 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+
 int main(){
-    int n;
-    cin >> n;
-
-    vector<int> grps(n);
-
-    for(int i = 0; i < n; i++){
-        cin >> grps[i];
-    }
-
-    sort(grps.begin(), grps.end());
-
-    int l = 0, r = n - 1;
-    int taxi = 0;
-
-    while(l <= r){
-
-        int rem = 4 - grps[r];
+  int n;
+  cin>>n;
+   vector<int> groups;
+   for(int i = 0 ; i<n ; i++){
+    int x;
+    cin>>x;
+    groups.push_back(x);
+   }
+   sort(groups.begin(),groups.end());
+   int l = 0 ; int r = n-1;
+   int taxi =  0 ;
+   while(l<=r){
+    int strenght = groups[l]+groups[r];
+      if(strenght == 4){
+        l++;
         r--;
-
-        while(l <= r && grps[l] <= rem){
-            rem -= grps[l];
-            l++;
-        }
-
         taxi++;
-    }
+      }
+      else if (strenght>4){
+        r--;
+        taxi++;
+      }
+      else {
+        while(l<=r && strenght <4){
+            l++;
+            strenght+= groups[l];
+        }
+        taxi++;
+        r--;
+      }
+   }
+cout<<taxi;
 
-    cout << taxi;
+  return 0;
 }
