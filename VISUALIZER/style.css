@@ -47,7 +47,7 @@ cursor: pointer;
 .container {
     display: flex;
     align-items:flex-end ;
-    justify-content: space-evenly;
+    justify-content:space-evenly;
     height: 410px; ;
    
 }
@@ -68,7 +68,7 @@ cursor: pointer;
     background: linear-gradient(to top,#2563eb,#38bdf8);
     border-radius: 8px 8px 0 0;
     transition:
-        height 0.3s ease,
+     
         background 0.3s ease;
 }
 
